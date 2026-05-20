@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useApp } from '../hooks/useApp'
-import { Terminal, Settings, Folder, FileText, Image, Github, Linkedin, Mail, Briefcase, School, Globe, GraduationCap, Layout, FileCode, GalleryHorizontal, Gamepad2, GalleryThumbnailsIcon, GalleryVerticalEnd } from 'lucide-react'
+import { Terminal, Settings, Folder, FileText, Image, Github, Linkedin, Mail, Briefcase, School, Globe, GraduationCap, Layout, FileCode, GalleryHorizontal, Gamepad2, GalleryThumbnailsIcon, GalleryVerticalEnd, Instagram } from 'lucide-react'
 
 const APPS = [
     { id: 'terminal', icon: Terminal, color: 'text-mauve', label: 'About Me', lightBg: 'bg-[#FF90E8]' },
@@ -14,9 +14,9 @@ const APPS = [
 ]
 
 const SOCIALS = [
-    { id: 'github', icon: Github, color: 'text-text', label: 'GitHub', url: 'https://github.com', lightBg: 'bg-[#00E5FF]' },
-    { id: 'linkedin', icon: Linkedin, color: 'text-blue', label: 'LinkedIn', url: 'https://linkedin.com', lightBg: 'bg-[#D2B8FF]' },
-    { id: 'mail', icon: Mail, color: 'text-peach', label: 'Contact', url: 'mailto:hello@example.com', lightBg: 'bg-[#FFDE59]' },
+    { id: 'instagram', icon: Instagram, color: 'text-pink', label: 'Instagram', url: 'https://instagram.com/erza.frd', lightBg: 'bg-[#00E5FF]' },
+    { id: 'linkedin', icon: Linkedin, color: 'text-blue', label: 'LinkedIn', url: 'https://www.linkedin.com/in/erza-farandi', lightBg: 'bg-[#D2B8FF]' },
+    { id: 'mail', icon: Mail, color: 'text-peach', label: 'Contact', url: 'mailto:erza.naufal@gmail.com', lightBg: 'bg-[#FFDE59]' },
 ]
 
 const DockIcon = ({ app, mouseX, isLight }) => {
