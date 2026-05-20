@@ -33,11 +33,20 @@ const DockIcon = ({ app, mouseX, isLight }) => {
 
     const isOpen = openWindows.some(win => win.id === app.id)
 
+    const Component = app.url ? motion.a : motion.div
+    const componentProps = app.url ? {
+        href: app.url,
+        target: "_blank",
+        rel: "noopener noreferrer"
+    } : {
+        onClick: () => openApp(app.id)
+    }
+
     return (
-        <motion.div
+        <Component
             ref={ref}
             style={{ width }}
-            onClick={() => app.url ? window.open(app.url, '_blank') : openApp(app.id)}
+            {...componentProps}
             className={`group relative aspect-square flex items-center justify-center cursor-pointer transition-all ${isLight ? `${app.lightBg} border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:-translate-y-1` : 'rounded-2xl glass hover:bg-white/20'}`}
         >
             <app.icon className={`w-1/2 h-1/2 ${isLight ? 'text-black' : app.color}`} />
@@ -51,7 +60,7 @@ const DockIcon = ({ app, mouseX, isLight }) => {
             {isOpen && (
                 <div className={`absolute -bottom-1.5 w-1 h-1 rounded-full ${isLight ? 'bg-black' : 'bg-white'}`} />
             )}
-        </motion.div>
+        </Component>
     )
 }
 
